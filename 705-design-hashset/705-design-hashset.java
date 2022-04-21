@@ -1,20 +1,22 @@
 class MyHashSet {
 int size = (int)Math.pow(10, 6)+1;
-	boolean[] flag;
+	int[] flag;
     public MyHashSet() {
-        flag = new boolean[size];
+        flag = new int[size];
     }
     
     public void add(int key) {
-        flag[key] = true;
+        flag[key] = 1;
     }
     
     public void remove(int key) {
-        flag[key] = false;
+        flag[key] = 0;
     }
     
     public boolean contains(int key) {
-        return flag[key];
+        if(flag[key]==0)
+            return false;
+        else return true;
     }
 }
 
